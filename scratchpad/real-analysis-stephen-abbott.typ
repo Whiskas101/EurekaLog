@@ -374,6 +374,123 @@ $
 Since $x$ belongs to only ONE of the two sets formed by the two different order of operations, the LHS set is not equal to the RHS set.
 *LHS $!=$ RHS, the given statement is false.*
 
+#pagebreak()
+
+(d) $A inter (B inter C) = (A inter B) inter C$.
+\ \ 
+*Solution* \
+This one if the first to be absolutely straight forward to me. A simple case of proving that order of intersection doesn't matter.
+
+I'll proceed with assuming that $A inter (B inter C) = (A inter B) inter C$ is not true. I assume that 
+$
+	A inter (B inter C) = (A inter B) inter C
+$
+Which means, the resulting sets are different. To begin, consider a set $M = A union B union C$, this set contains, *all* relevant elements, no matter where they come from. It stands to reason that $ A inter M  = A$, since the intersection will only return items common to $A$ and $M$.
+
+#strike[I am currently thinking of a cardinality argument, the general idea is that cardinality of the resulting set of an intersection must monotonically decrease, it can never increase, because it can never introduce new items to a set. But it does nothing to show two sets are equal even if their cardinality matches.]
+
+I think i'll go by exhausting possibilities instead.
+
+Assume some element $x$ exists. There's the following possible scenarios:
+ - $x$ belongs to all three sets
+ - $x$ belongs to two of the three sets
+ - $x$ belongs to one of the three sets
+
+Consider the first case of $x$ belonging to $A, B, C$ respectively.
+
+$
+	x in A and x in B <=> x in A inter B
+	\ x in A and x in C <=> x in A inter C
+	\ x in C and x in B <=> x in C inter B
+
+	\ "Basically," x "survives all culling scenarios in this case"
+$
+
+There's no combination of application of intersection that would get rid of $x$ for this case. Therefore, the condition hold equal on both sides.
+
+The next case, $x$ belongs to two of the three sets, I'll assume $x in A$ and $x in B$
+$
+	x in A and x in B <=> x in A inter B\
+
+	x in A arrow.r.not.double x in A inter C\
+	x in B arrow.r.not.double x in B inter C\
+$
+
+This means, $C$ effectively culls out $x$. Because $x$ being in some set $P$ does not imply that it will be in $P inter Y$ where $Y$ is any other set not containing $x$.
+
+
+Wait, I just thought of a better argument.
+
+If there's any set that doesn't contain $x$ then the intersection of this specific set with of any and all sets with or without $x$ will not contain $x$
+
+$
+	exists S_p x in.not S_p => x in.not S_p inter S\
+	"where " S " is any set"
+$
+
+Using the above deduction, we can quickly exhaust the outcomes of the three scenarios (two really actually):
+ - All sets have $x$, no culling occurs, LHS $=$ RHS
+ - One of the sets does not have $x$, therefore the final outcome remains identical, $x$ belongs to neither of the two sets formed by LHS or RHS
+ - $x$ gets culled out, LHS = RHS, this is trivial because only one set needs to lack $x$ to eradicate it from the result of any repeated intersection operation regardless of order.
+
+
+_I guess I could try and prove the order doesn't matter rigorously, but I think this is enough?_
+
+*The given statement is true. Intersection of sets is associative*
+#pagebreak()
+
+(e) $A inter (B union C)  =  (A inter B) union (A inter C)$
+\ \ 
+*Solution* \
+Looking at the shape of it, it's obvious this talks about distributivity of the $inter$ operation on sets.
+
+Intuitively, the statement is true. Intersection culls values, as long as it's applied after all unions, or it's applied to every other set.
+
+We know this about intersection:
+$
+	x in.not A => x in.not A inter P
+$
+where $P$ is any set. 
+
+Therefore, $x$ is not present on the left hand side. (if we assume $x in.not A$ for _now_)
+
+Moving on, using the same rules, we can conclude these about the right hand side:
+$
+	x in.not A => x in.not A inter B \
+	x in.not A => x in.not A inter C
+$
+
+Therefore, $x in.not A inter B and x in.not A inter C => x in.not (A inter B) union (A inter C) $
+
+Up until now, this shows as that the LHS and RHS behave identically as long as $x in.not A$, $A$ culls elements.
+
+In the case that $x in A$, it becomes a matter of whether $B$ or $C$ contains $x$ or not. Which leads to two scenarios:
+ - Both of them have $x$
+ - One or none of them have $x$
+
+In the first case, $x in A and x in B union C => x in A inter (B union C)$
+
+for the RHS: $x in A inter B and x in A inter C => x in (A inter B) union (A inter C)$
+
+LHS = RHS
+
+In the second case, $x in A and x in B union C =>  x in A inter (B union C)$
+
+for the RHS, things are a bit different
+$
+	x in A and x in B => x in (A inter B)\
+	x in A and x in.not C => x in.not (A inter C)\
+
+	(x in A and x in B) and (x in A and x in.not C) => x in (A inter B) union (A inter C)\
+
+	x in A and x in B and x in.not C => x in (A inter B) union (A inter C)
+$
+
+LHS = RHS
+
+
+*The condition holds true. _Though, this is probably the lowest quality of proof, where i'm just exhausting the possible states and checking each one._*
+
 
 
 

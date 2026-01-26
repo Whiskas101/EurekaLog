@@ -1,0 +1,15 @@
+# some config so I can see previews of my changes updates locally anywhere from my tailnet mesh
+
+http://laptop.camel-platy.ts.net:1111 {
+	basicauth * {
+		# Yes, I committed the hash to vcs (sue me).
+		#user  #password
+		whiskas $2a$14$yseC0air/Z5WiCbA0VQqdu8clshDoZytNFT2vncObgVlMJhupkzc.
+	}
+
+	reverse_proxy 127.0.0.1:23635 {
+		# rewriting headers, because tinymist devs are pricks
+		header_up Host {upstream_hostport}
+		header_up Origin "http://{upstream_hostport}"
+	}
+}

@@ -567,4 +567,18 @@ $
 This is just be doing it LHS to RHS, but doing it from RHS to LHS is easy as well, and can be done to prove LHS = RHS.
 
 
+#pagebreak()
 
+== 1.2.4 Verify the triangle inequality in the special cases where
+
+*(a) $a$ and $b$ have the same sign*
+
+*(b) $a >= 0$, $b < 0$, and $a + b >= 0$*
+
+#pagebreak()
+
+== 1.2.5 Use the triangle inequality to establish the inequalities
+
+*(a) $|a -b| <= |a| + |b|$*
+
+*(b) $| |a| -|b| | <= |a - b|$*

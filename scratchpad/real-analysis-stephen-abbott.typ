@@ -496,4 +496,75 @@ LHS = RHS
 
 
 
+#pagebreak()
+
+
+=== 1.2.3
+*(De Morgan's Laws). Let A and B be subset sof $RR$*
+
+(a) If $x in (A inter B)^c$, explain why $x in  A^c union B^c$. This shows that $(A inter B)^c supeq A^c union B^c$
+
+(b) Prove the reverse inclusion $(A inter B)^c supeq A^c union B^c$, and conclude that $(A inter B )^c = A^c inter B^c$.
+
+(c) Show $(A union B)^c = A^c inter B^c$ by demonstrating inclusion both ways.
+
+\
+*Solution:*
+
+(a) 
+
+$
+	x in.not A => x in A^c\
+	x in.not B => x in B^c\
+	
+	x in.not A union B => x in (A^c inter B^c)\
+	x in.not A inter B => x in (A inter B)^c
+
+$
+
+The last equation is particularly important, it tells us that if $x$ is not within the bounds of $A$ and $B$, it might very well still exist in either of them, or neither of them. All it tells us, is that $x$ is not simultaneously a part of $A$ or $B$. Thus, $x$ is free to be either:
+ - Part of $A$ but not $B$
+ - Part of $B$ but not $A$
+ - Part of neither (it goes somewhere else in the universal set)
+
+$
+	x in (A inter B)^c <=> x in.not (A inter B)\
+	x in.not (A inter B) <=> x in.not A or x in.not B\
+	x in.not A or x in.not B <=> x in A^c or x in B^c\
+	x in.not A or x in.not B <=> x in (A^c union B^c)\
+\ "Hence,"
+	x in (A inter B)^c <=> x in (A^c union B^c)\
+	
+$ 
+
+(b) ended up accidentally proving it in (a)
+
+(c) The second De Morgan's Law.
+\
+
+To prove: 
+ $(A union B)^c = A^c inter B^c$ by demonstrating inclusion both ways.
+
+Given:
+
+$
+	x in.not A <=> x in A^c\
+	x in.not A inter B <=> x in (A inter B)^c\
+	x in.not A union B <=> x in (A union B)^c\
+$
+Proving:
+
+$
+	x in (A union B)^c => x in.not (A union B)\
+	x in.not (A union B) => x in.not A and x in.not B\
+	x in.not (A union B) => x in A^c and x in B^c\
+	x in.not (A union B) => x in (A^c inter B^c)\
+
+"Hence: " x in (A union B)^c => x in (A^c inter B^c)
+	
+$
+
+This is just be doing it LHS to RHS, but doing it from RHS to LHS is easy as well, and can be done to prove LHS = RHS.
+
+
 

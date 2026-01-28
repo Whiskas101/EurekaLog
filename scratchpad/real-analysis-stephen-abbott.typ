@@ -582,3 +582,120 @@ This is just be doing it LHS to RHS, but doing it from RHS to LHS is easy as wel
 *(a) $|a -b| <= |a| + |b|$*
 
 *(b) $| |a| -|b| | <= |a - b|$*
+
+\ \
+*Solution*
+
+The triangle inequality simply claims that going through a third point will always be longer than or equal to the distance between two points directly. While I state this in terms of distances, the concept applies to 1 dimensional lines just as well, it's even more obvious here.
+
+$
+	| a - b | <= | a - c | + | c - b |
+$
+
+In the case of (a): $|a -b| <= |a| + |b|$, which claims the "distance" between two numbers $a$ and $b$ is less than or equal to the magnitude of the two numbers.
+
+#strike[
+
+	I can't think of any immediate way to prove this. So I'll assume the opposite and see what happens.
+
+	Let $|a - b| > |a| + |b|$. But with a simple example of $a$ = 1 and $b= 1$, we see:
+
+	$
+	| 1- 1| > |1| + |1| 
+	\ = 0 > 1
+$
+
+]
+
+
+
+What is the absolute function saying? 
+$
+	|x| = -x " if "x < 0\
+	|x| = x " if "x >= 0
+$
+
+
+$|a-b| <= |a| + |b|$ is a special case of $|a-b| <= |a-c| + |c -b|$ with $c = 0$, if the triangle inequality is just assumed to be true, then the proof is  a trivial case of setting a zero value for $c$.
+$
+	|a - b| <= |a - 0| + |0 - b|
+$
+
+(b) $| |a| - |b| | <= |a - b|$
+
+The statement says, the straight distance between two numbers, is greater than the absolute of the difference in magnitudes of the two numbers or equal to it.
+
+We know that:
+$
+	|x| = -x " if "x < 0\
+	|x| = x " if "x >= 0
+$
+$
+	forall x |x| > 0 
+$
+
+
+#strike[
+	Here the LHS, takes the magnitude of $a$ and $b$ before subtracting them. Since the output of the absolute func is always $ > 0$ 
+
+
+$
+	| |a| - |b| | <= |a - b|\
+	| |a| - |b| | <= |a| + |b| 
+$
+
+	Let $|a| = p, |b| = q $:
+	$
+	|p - q| <= |p| + |q|
+$
+	As proven in (a)
+
+]
+
+
+A simpler proof I was too stupid to think of:
+$
+	|a| = |a + b - b|\
+$
+Regrouping terms:
+$
+	|a| = |(a - b) + b|\
+$
+
+Applying triangle inequality with $(a-b) = p$ 
+$
+	|p - b| <= |p-0| + |0-b|\
+	|p - b| <= |p| - |b|\
+	|(a-b) - b| <= |(a-b)| + |b|\
+	|a| <= |(a-b)| + |b|\
+	|a| - |b| <= |a-b| 
+$
+
+Swapping $a$ and $b$:
+$
+	|b| - |a| <= |b-a|\
+	-(|a| - |b|) <= |a-b|\
+$
+Then:
+$
+	| |a| - |b| | <= |a - b|
+$
+
+_(Attempt this proof again, seems to be weird)_
+
+#pagebreak()
+
+
+== 1.2.6
+Given a function $f$ and a subset $A$ of its domain, let $f(A)$ represent the range of $f$ over the set A; that is, $f(A) = {f(x): x in A}$.
+
+(a) Let $f(x) = x^2$. If $A = [0, 2]$ and $B = [1, 4]$, find $f(A)$ and $f(B$). Does $f(A inter B) = f(A) inter f(B)$ in this case? 
+Does $f(A union B) = f(A) union f(B)?$
+
+(b) Find two sets $A$ and $B$ for which $f(A inter B) != f(A) inter f(B)$.
+
+(c) Show that, for an arbitrary functino $g: RR -> RR$, it is always true that $g(A inter B) subeq g(A) inter g(B)$ for all sets $A, B subeq RR$.
+
+(d) Form and prove  a conjecture about the relationship between $g(A union B)$ and $g(A) union g(B)$ for an arbitrary function $g$.
+
+

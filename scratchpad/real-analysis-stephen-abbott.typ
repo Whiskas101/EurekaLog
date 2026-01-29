@@ -694,7 +694,7 @@ Does $f(A union B) = f(A) union f(B)?$
 
 (b) Find two sets $A$ and $B$ for which $f(A inter B) != f(A) inter f(B)$.
 
-(c) Show that, for an arbitrary functino $g: RR -> RR$, it is always true that $g(A inter B) subeq g(A) inter g(B)$ for all sets $A, B subeq RR$.
+(c) Show that, for an arbitrary function $g: RR -> RR$, it is always true that $g(A inter B) subeq g(A) inter g(B)$ for all sets $A, B subeq RR$.
 
 (d) Form and prove  a conjecture about the relationship between $g(A union B)$ and $g(A) union g(B)$ for an arbitrary function $g$.
 

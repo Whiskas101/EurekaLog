@@ -689,7 +689,7 @@ _(Attempt this proof again, seems to be weird)_
 == 1.2.6
 Given a function $f$ and a subset $A$ of its domain, let $f(A)$ represent the range of $f$ over the set A; that is, $f(A) = {f(x): x in A}$.
 
-(a) Let $f(x) = x^2$. If $A = [0, 2]$ and $B = [1, 4]$, find $f(A)$ and $f(B$). Does $f(A inter B) = f(A) inter f(B)$ in this case? 
+(a) Let $f(x) = x^2$. If $A = [0, 2]$ ($x in RR$) and $B = [1, 4]$, find $f(A)$ and $f(B$). Does $f(A inter B) = f(A) inter f(B)$ in this case? 
 Does $f(A union B) = f(A) union f(B)?$
 
 (b) Find two sets $A$ and $B$ for which $f(A inter B) != f(A) inter f(B)$.
@@ -697,5 +697,78 @@ Does $f(A union B) = f(A) union f(B)?$
 (c) Show that, for an arbitrary function $g: RR -> RR$, it is always true that $g(A inter B) subeq g(A) inter g(B)$ for all sets $A, B subeq RR$.
 
 (d) Form and prove  a conjecture about the relationship between $g(A union B)$ and $g(A) union g(B)$ for an arbitrary function $g$.
+
+\
+*Solution: *\
+\
+(a)
+
+$A inter B = [1, 2]$ since $1$ can be found within the range $[0, 1]$, and $2$ can be found within $[1, 4]$
+$
+	f(A inter B) = f([1,2]) = [1, 4] \
+
+	f(A) = f([0, 2]) = [0, 4]\ 
+	f(B) = f([1, 4]) = [1, 16]\ 
+	f(A) inter f(B) = [1, 4]
+$
+
+For this example, $f(A inter B) = f(A) inter f(B)$.
+
+$
+	f(A union B) = f([0, 4]) = [0, 16]\
+	f(A) union f(B) = [0, 4] union [1, 16]\
+	f(A) union f(B) = [0, 16]\
+$
+
+The union conditions seems to hold for this problem as well.
+
+(b) Just need to find two sets where $f(A inter B) != f(A) inter f(B)$.\
+
+Let $A = [-1, 0]$ and $B = [1, 3]$.\
+
+$
+	A inter B = emptyset\
+	f(A inter B) = f(emptyset) = emptyset\
+	f(A) inter f(B) = [0, 1] inter [1, 9] = {1}\
+	emptyset != {1}
+$
+
+Hence, for $A = [-1, 0]$ and $B = [1, 3]$, the given equation holds.
+
+*This approach relies on the fact that $x^2$ as a function can map two values to one value. A one to one monotonic function would not uphold that inequality*
+
+#pagebreak()
+
+(c) This one seems a bit trickier. I need to show that:
+$
+	"Given a function " g: RR -> RR\
+	g(A inter B) subeq g(A) inter g(B)\ forall A, B subeq RR
+	
+$
+
+Since algebra won't help here, the next best thing is to go through and understand what the inputs and outputs are, I think?
+
+The inputs space is straight forward, the domain, is simply $A$ and $B$.
+The outputs are whatever the set of numbers that the function $g$ spits out, which are themselves going to belong to the sets $g(A)$ and $g(B)$ respectively.
+
+$
+	x in A => g(x) in g(A)\
+	x in B => g(x) in g(B)\
+	x in (A inter B) => x in A and x in B\
+	x in A and x in B => g(x) in g(A) and g(x) in g(B)\
+	g(x) in g(A) and g(x) in g(B) => g(x) in g(A) inter g(B)\
+	
+	x in (A inter B ) => g(x) in g(A) inter g(B)\
+	
+
+$
+Therefore, 
+$
+	g(A inter B) subeq g(A) inter g(B)\
+$
+
+
+The above statements hold true for all $x$ in $A inter B$.
+
 
 

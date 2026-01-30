@@ -793,5 +793,69 @@ _(Gotta prove it for the other way around, to show both are subsets of each othe
 
 #pagebreak()
 
+== 1.2.7
+*Given a function $f:DD->RR$ and a subset $B subeq R$, let $f^(-1)(B)$ be the set of all points from the domain $D$ that get mapped into $B$; that is,*
+*$
+	f^(-1)(B) = {x in D: f(x) in B}
+$*
+*This set is called the _preimage_ of $B$*
+
+(a) Let $f(x) = x^2$. If $A$ is the closed interval $[0, 4]$ and $B$ is the closed interval $[-1,1]$, find $f^(-1)(A)$ and $f^(-1)(A inter B) = f^(-1)(A) inter f^(-1)(B)$ in this case? Does $f^(-1)(A union B) = f^(-1)(A) union f^(-1)(B)$?
+
+=== Solution
+The inverse operation would be the square root, but to think in terms of which inputs get mapped to the actual output set B, is the overarching goal here.
+
+// Writing inverses manually is so much pain, typst being a programming language and a markup lang is such a W
+#let finv(x) = $f^(-1)(#x)$
+
+$
+	A' = [-2, 2]
+$
+We only need to analyze the extreme ends of $A$ to nail down the preimage. _This is a simplification, I know._
+
+Similarly.
+$
+	B' = [-1, 1]
+	
+$
+Even though the domain is $[-1, 1]$, only the part from zero to one is really reachable by $f(x)$, since 
+$
+	x < 0 => x in.not f(x)
+$
+
+with the knowledge and weird notation of 
+$
+	A' = finv(A)\
+	B' = finv(B)\
+
+	finv(A) inter finv(B) = A' inter B' = [-2, 2] inter [-1, 1]\
+	finv(A) inter finv(B) = [-1, 1]\
+
+	finv(A inter B) = finv([0, 1]) = [-1, 1]\
+	\
+	finv(A inter B) = finv(A) inter finv(B)\
+
+$
+The union case:
+$
+	finv(A union B) = finv([-1, 4]) = [-2, 2]\
+	finv(A) union finv(B) = [-2, 2] union [-1, 1]\
+	\
+	finv(A union B) = finv(A) union finv(B)	\
+$
+
+I forgot that the range of $[0, n] : n in RR$ can be achieved by any number from $[-n, n]$, atleast for $f(x) = x^2$. I ran with the positive assumption too often and broke the proof. It's a necessity to really ensure the function is injective or even bijective before I make such leaps.
+
+
+
+
+
+
+
+
+
+#pagebreak()
+
+(b) The good behaviour of preimages demonstrated in (a) is completely general. Show that for an arbitrary function $g: RR -> RR$, it is always true that $g^(-1)(A inter B) = g^(-1)(A) inter g^(-1)(B)$ and $g^(-1)(A union B) = g^(-1)(A) union g^(-1)(B)$ for all sets $A, B subeq RR$.
 
 

@@ -769,6 +769,29 @@ $
 
 
 The above statements hold true for all $x$ in $A inter B$.
+\ \ 
+(d) _Form and prove a conjecture about the relationship between $g(A union B)$ and $g(A) union g(B)$ for an arbitrary function $g$._
+
+A conjecture is just a seemingly true, but unproven statement. Proving it would graduate it to the status of a theorem. 
+
+I say:
+$
+	g(A union B) = g(A) union g(B)
+$
+
+$
+	x in A => g(x) in g(A)\
+	x in B => g(x) in g(B)\
+	x in A or x in B => g(x) in g(A) or g(x) in g(B)\
+	x in (A union B) => g(x) in g(A) union g(B)\
+	x in (A union B) => g(x) in g(A union B) "from the first implication, duh"
+
+$
+
+
+_(Gotta prove it for the other way around, to show both are subsets of each other, but it's so easy I'm skipping it.)_
+
+#pagebreak()
 
 
 

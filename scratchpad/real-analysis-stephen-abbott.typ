@@ -998,3 +998,96 @@ There exists a real number $x$ for which all natural number $n$ are smaller than
 
 
 #pagebreak()
+
+== 1.2.9
+
+*Show that the sequence $(x_1, x_2, x_3, ...)$ defined in _Example 1.2.7_ is bounded above by $2$; that is, prove that $x_n <= 2$ $forall n in NN$.*
+
+
+*Solution*:
+
+Example 1.2.7 states:
+Let $x_1 = 1$, and $forall n in N$ define:
+
+$
+	x_(n+1) = (1/2)x_(n) + 1
+$
+
+// Defining a func here so I dont have to manually calculate it
+#let recurse(n) = {
+	let m = int(n)
+	if m == 1{
+		return 1
+	}
+
+	let val =  1 + (1/2)* recurse(m - 1)
+	return val
+}
+
+
+
+Playing around
+$
+	x_(1) = 1\
+	x_(2) = (1/2)x_1 + 1\ = 1/2 + 1 = 3/2\
+	x_(3) = (1/2)x_2 + 1 = (1/2) times 3/2 + 1 =  7/4\
+	x_(3) = (1/2)x_2 + 1 = (1/2) times 3/2 + 1 =  7/4\
+	"Numerically, " x_(3) = recurse(#int(3))\
+	x_(4) = recurse(#int(4))\
+	x_(5) = recurse(#int(5))\
+	x_(6) = recurse(#int(6))\
+	x_(7) = recurse(#int(7))\
+	x_(8) = recurse(#int(8))\
+	x_(9) = recurse(#int(9))\
+$
+
+Numerically, I can see the vision. But how do I prove it? It's so unintuitive to do so without relying on just brute force computation. Which at the same time is not the right way to prove things.
+
+Every step in the sequence, is $1$ plus half the last value in the sequence.
+
+If $x_n$ is smaller than $2$ for all values of $n in NN$ then surely this must hold.
+$
+	"if " x_(k) <= 2\
+
+	"then" x_(k + 1) <= 2\
+
+	x_(k+1) = (1/2)x_(k) + 1
+$
+
+So, we can see that $x_k$ is less than 2, for some $k$, it's rather easy to find that there's some $n = k$ where $x_n <= 2$, the base case of $x_1 = 1$ being one example of such $n$.
+
+By induction as stated in example 1.2.7, we know that 
+$
+	x_(k) <= x_(k+1)
+$
+
+How do i prove that $x_(k+1)$ is smaller than or equal to $2$.
+$
+	x_(k+1) = (1/2)x_(k) + 1
+$
+
+Consider the base case, $x_1 = 1$
+$
+	x_1 <= 2\
+$
+Apply certain transforms to this inequality:
+ - multiply both sides by $1/2$
+ - add one to both sides
+
+$
+	(1/2)x_1 + 1 <= (1/2)(2) + 1\
+	x_(2) <= 2\
+$
+
+Similarly, generalizing this to some $n = k$ such taht $x_k <= 2$
+$
+	x_k <= 2\
+	(1/2)x_k + 1 <= (1/2) (2) + 1\
+	x_(k+1) <= 2\
+$
+
+By induction, we showed that $forall n in NN : x_n <= 2$
+
+
+
+

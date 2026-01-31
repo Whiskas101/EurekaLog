@@ -930,3 +930,71 @@ $
 
 
 
+#pagebreak()
+
+== 1.2.8
+Form the logical negation of each claim. One way to do this is to simply add “It is not the case that...” in front of each assertion, but for each
+statement, try to embed the word “not” as deeply into the resulting sentence
+as possible (or avoid using it altogether).
+
+*(a) For all real numbers satisfying $a < b$, there exists an $n ∈ NN$ such that $a + 1/n < b$.*
+=== Solution
+
+Written more formally:
+$
+	forall a < b," " exists n in N : a + 1/n < b
+$
+A negation of this would be:
+$
+	exists a < b, " " forall n in N : a + 1/n >= b
+$
+There exists $a < b$ such that for all $n in B$ : $ a + 1/n >= b$
+
+*(b) Between every two distinct real numbers, there is a rational number.*
+To formal notation:
+$
+	forall a, b in RR," " exists r in QQ : a < r < b\
+
+	"Better written as: " forall a, b in RR," " exists r in QQ : (a < r) and (r < b)
+$
+After negation:
+$
+	"Reminder that via De Morgans': " not(a < r and r < b) = a >= r or r >= b\
+	exists a,b in RR, " " forall r in QQ : a >= r or r >= b
+$
+There exists real numbers $a, b: a < b$ such that, for all $x$ : $a >= r$ or $r >= b$
+
+*(c) For all natural numbers $n ∈ NN$, $√n$ is either a natural number or an irrational number.*
+
+$RR - QQ$ is a trick to represent the set of irrational numbers.
+$
+	forall n in NN, " " sqrt(n) in NN or sqrt(n) in (RR - QQ) 
+$
+It's negation:
+$
+	exists n in NN, " " sqrt(n) in.not NN and sqrt(n) in.not (RR - QQ)
+$
+There exists a natural number $n$ such that $sqrt(n)$ is not a natural number, and neither is it an irrational number.
+
+OR more interestingly: "There exists a natural number $n$ such that $sqrt(n)$ is rational number that is not a natural number"
+
+
+*(d) Given any real number $x ∈ RR$, there exists $n ∈ NN$ satisfying $n > x$*
+
+$
+	forall x in RR, " " exists n in NN : n > x
+$
+
+Negation:
+
+$
+	exists x in RR, " " forall n in NN : n <= x
+$
+
+There exists a real number $x$ for which all natural number $n$ are smaller than or equal to $x$
+
+
+
+
+
+#pagebreak()

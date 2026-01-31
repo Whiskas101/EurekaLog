@@ -858,4 +858,75 @@ I forgot that the range of $[0, n] : n in RR$ can be achieved by any number from
 
 (b) The good behaviour of preimages demonstrated in (a) is completely general. Show that for an arbitrary function $g: RR -> RR$, it is always true that $g^(-1)(A inter B) = g^(-1)(A) inter g^(-1)(B)$ and $g^(-1)(A union B) = g^(-1)(A) union g^(-1)(B)$ for all sets $A, B subeq RR$.
 
+#let ginv(x)= $g^(-1)(#x)$;
+#let Range(x)= $"Range"(#x)$;
+#let Preimage(x)= $"Preimage"(#x)$;
+
+
+
+From the way functions and their preimages are defined:
+$
+	g: DD -> RR = {x in DD : f(x) in BB}\
+	"where" BB subeq RR
+$
+
+For any arbitary function $g: D -> O$ where $D,O subeq RR$
+$
+	Range(g) = {g(x) | x in D}
+$
+Range refers to the subset of $O$, the codomain, that actually gets mapped via $g(x)$, basically the valid set of outputs for all valid inputs ($D$).
+$
+	Range(g) subeq O
+$
+Preimage, is the set of all inputs that lead to a set of outputs.
+$
+	Preimage(Range(g)) = D
+$
+Naturally, if we try to find the preimage of the set of all valid outputs of some function $g$ we end up getting back the domain of $g$, which is $D$.
+
+
+Moving on, an inverse of a function is a backwards mapping, from all possible outputs, to their respective inputs.
+$
+	g: D -> O\
+	D, O subeq RR\
+	
+	ginv(A) = {x | g(x) in A and x in D}
+$
+
+Next the union of preimages gets us:
+$
+	x in D\
+	ginv(A) union ginv(B) = {x | g(x) in A} union {x | g(x) in B}\
+	ginv(A) union ginv(B) = {x | g(x) in A or g(x) in B}\
+
+	ginv(A) union ginv(B) = {x | g(x) in A union B}
+
+$
+That's one side of the equation, onto the other one:
+$
+	x in D\
+	ginv(A union B) = {x | g(x) in A union B} 
+$
+This simply follows from the definition of the preimage, we just passed in a set that happened to be $A union B$
+
+Therefore $ginv(A union B) = ginv(A) union ginv(B)$
+
+For the case of intersection:
+$
+	ginv(A) inter ginv(B) = {x | g(x) in A} inter {x | g(x) in B}\
+	ginv(A) inter ginv(B) = {x | g(x) in A and g(x) in B}\
+	ginv(A) inter ginv(B) = {x | g(x) in A inter B}
+$
+
+And trivially, we can show:
+$
+	ginv(A inter B) = {x | g(x) in A inter B}
+$
+
+And hence:
+$
+	ginv(A inter B) = ginv(A) inter ginv(B)
+$
+
+
 

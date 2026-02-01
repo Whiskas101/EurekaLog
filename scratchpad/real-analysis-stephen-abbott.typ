@@ -1090,4 +1090,89 @@ By induction, we showed that $forall n in NN : x_n <= 2$
 
 
 
+#pagebreak()
+
+
+
+== 1.2.10
+*Let $y_1$ = 1, and for each $n in NN$ define $y_(n+1) = (3y_n + 4)/4$.*
+(a) Use induction to prove that the sequence satisfies $y_n < 4$ for all $n in NN$.
+
+(b) Use another induction argument to show that the sequence $(y_1, y_2, y_3, dots)$ is increasing.
+
+\
+
+*Solution*
+\
+(a) Essentially a repeat of the previous question, I just need to show that the sequence defined is bounded by $4$.
+
+First, find some $k$ such that $y_(n=k)$ is less than $4$, which is given to us by $k=1$, where $y_1 = 1$ as defined by the base case.
+
+If $exists k : y_k < 4$
+then $y_(k+1) < 4$
+
+The above statement needs proving.
+
+$
+	y_(k) < 4 
+$
+
+Applying these transformations to the inequality above:
+ - Multiply both sides by $3$
+$
+	3 y_k < 3 times 4\
+	3 y_k < 12
+$
+
+ - Add $4$ to both sides
+$
+	
+	3 y_k  + 4 < 12 + 4\
+	3 y_k  + 4 < 16\
+$
+
+ - Divide both sides by $4$
+$
+	
+	(3 y_k  + 4 )/4< (16)/4\
+	(3 y_k  + 4 )/4< 4\
+$
+
+By definition of $y_(n+1)$:
+
+$
+	y_(n+1) = (3y_n + 4)/4
+$
+
+Therefore, 
+$
+	y_(k+1) < 4
+$
+
+*Proved.*
+
+#pagebreak()
+(b) To show that the sequence $(y_1, y_2, y_3, dots)$ is increasing, I need to establish an immediate neighbour inequality and just generalise that.
+
+Consider the case of $n =1, 2$
+
+$
+	y_1 = 1\
+	y_2 = (3y_1 + 4)/4 = 7/4 
+$
+
+Here, it's obvious that $y_2 >= y_1$
+
+$
+	y_(k+1) >= y_(k)\
+	3y_(k+1) >= 3y_k\
+	3y_(k+1) + 4>= 3y_k + 4\
+	(3y_(k+1) + 4)/4 >= (3y_k + 4)/4\
+
+	"Which is just, " y_(k+2) >= y_(k+1)
+$
+
+So, the inequality holds for all $k in NN$
+
+
 

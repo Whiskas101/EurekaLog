@@ -1174,5 +1174,70 @@ $
 
 So, the inequality holds for all $k in NN$
 
+#pagebreak()
+
+== 1.2.11
+*
+If a set $A$ contains $n$ elements, prove that the number of different subsets of $A$ is equal to $2^n$. (Keep in mind that the empty set $emptyset$ is considered to be a subset of every set.)
+*
+
+\
+*Solution*
+\
+
+My mind is set on an induction proof, even though I know from my discrete math courses that this can be easily proven by a combinatorial argument.
+
+Consider the base case of $A = emptyset$, the number of all subsets of $A$ is simply $1$.
+
+Rewriting this into a more suitable notation that lends itself easier to a recursive definition.
+
+Let $A_n$ represent a set with $n$ items, $n in NN$.
+
+$
+	|P(A_0)| = 1 \
+	|P(A_1)| = |{{1}, emptyset}| \
+	|P(A_2)| = |{{1, 2}, {1}, {2}, emptyset}| \
+	|P(A_3)| = |{{1, 2, 3}, {1, 2}, {2, 3}, {1, 3}, {1}, {2}, {3}, emptyset}| \
+$
+
+Here a recursive relation between the cardinality of the power set emerges:
+$
+	|P(A_n)| = 2 times |P(A_(n-1))|
+$
+
+Expanding this relation out until the base case:
+$
+	|P(A_n)| = 2 times 2 times 2 times ... 2 times |P(A_(1))|\
+	|P(A_n)| = 2 ^ n
+$
+
+But how do I justify this claim?
+
+$
+	|P(A_(n+1))| = 2 times |P(A_(n))|
+$
+
+I can see that for every set $A_n$ its power set includes every possible combination of it's constituents. If a new item $x in.not A_n$ is added to this set, thereby making it $A_(n+1)$ how does the power set change?
+
+The new element $x$ can either be put in, or excluded from each set in the power set of $A_n$. This effectively doubles the number of items.
+
+Consider a simple example with $n=2$
+$
+	P(A_2) = {{1, 2}, {1}, {2}, emptyset} \
+	"Adding "x" to " A_n, P(A_(n+1)) = {P(A_n) union {{x} union B : B in P(A_n)}}\
+
+	P(A_3) = {P(A_2) union {{1, 2, 3}, {1, 3}, {2, 3}, {3}}\
+	|P(A_3)| = |P(A_2)| + |{1, 2, 3}, {1, 3}, {2, 3}, {3}|\
+	|P(A_3)| = |P(A_2)| + |P(A_2)|\
+	
+$
+
+This is just a convoluted way of saying, every set in the power set is combined with the new element $x$, to give an additional $n$ unique sets that can now be considered the power set of $A_n$.
+
+
+
+
+
+
 
 

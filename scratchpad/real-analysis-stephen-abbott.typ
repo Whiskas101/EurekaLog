@@ -1237,6 +1237,64 @@ This is just a convoluted way of saying, every set in the power set is combined 
 
 
 
+#pagebreak()
+
+== 1.2.12
+For this exercise, assume Exercise 1.2.3 has been successfully completed.
+
+(a) Show how induction can be used to conclude that 
+$
+	(A_1 union A_2 union A_3 union dots union A_n)^c = A_1^c inter A_2^c inter dots inter A_n^c
+$
+for any finite $n in NN$
+\ \
+*Solution*
+
+\ \
+Given that we can use De Morgan's laws:
+$
+	(A union B)^c = A^c inter B^c\
+	(A inter B)^c = A^c union B^c\
+$
+
+Building off the simple starting case with $A 1, A 2$, and applying De Morgan's laws:
+$
+	(A_1 union A_2)^c = A_1^c inter A_2^c\
+$
+
+For the case of $3$ terms, it can be simplified down to the $2$ set scenario.
+
+$
+	(A_1 union A_2 union A_3)^c = (P union A_3)^c\
+	(P union A_3)^c = P^c inter A_3^c\
+	(P union A_3)^c = (A_1 union A_2)^c inter A_3^c \
+	(A_1 union A_2 union A_3)^c =  A_1^c inter A_2^c inter A_3^c \
+$
+
+$
+	(A_1 union A_2)^c = A_1^c inter A_2^c\
+	"intersection with " A_3^c\
+	(A_1 union A_2)^c inter A_3^c = A_1^c inter A_2^c inter A_3^c\
+	
+	"By De Morgan's " (A_1 union A_2 union A_3)^c = A_1^c inter A_2^c inter A_3^c\
+$
+
+Applying the following transformation:
+$
+	(limits(union)_(n=1)^(N) A_n)^c
+$
+ - Intersect with $A_(N+1)^c$
+
+Moving along:
+
+$
+	(limits(union)_(n=1)^(N) A_n)^c inter A_(N+1)^c = (limits(union)_(n=1)^(N+1) A_n)^c
+$
+$
+	"With the previous eqn:", (limits(union)_(n=1)^(N) A_n)^c inter A_(N+1)^c = (limits(inter)_(n=1)^N A_n^c) inter A_(N+1)^c\
+	= (limits(inter)_(n=1)^(N+1) A_n^c)
+	
+$
 
 
 

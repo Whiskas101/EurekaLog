@@ -1295,7 +1295,64 @@ $
 	= (limits(inter)_(n=1)^(N+1) A_n^c)
 	
 $
+#pagebreak()
 
+(b) explain why induction *_cannot_* be used to conclude 
+$
+	(limits(union)_(n=1)^oo A_n)^c = limits(inter)_(n=1)^oo A_n^c
+$
+
+It might be useful to consider part (a) of Exercise 1.2.2
+
+\ \ \
+*Solution*
+
+Apparently, induction only applies to finite sets, and it doesn't speak to anything in the case of infinite sets.
+I don't know exactly why this is. But this means that if a collection of $B_1, B_2, dots$ where $inter_(i=1)^n B_i != emptyset$ BUT $inter_(i=1)^oo B_i = emptyset$ holds.
+
+This would call into question the generalisability of induction to infinite cases, and since I only need one example, a counter example, to disprove that it would solve it.
+
+Given the definition of sets in Exercise 1.2.2
+
+$
+	A_k = {k, k+1, k+2, dots}
+$
+
+Take the base case:
+$
+	A_1 inter A_2 = {1, 2, 3, dots} inter {2, 3, 4, dots} = {2, 3, 4, dots}
+$
+
+which just says:
+$
+	A_1 inter A_2 = A_2
+$
+
+For some $k$:
+$
+	A_k inter A_(k+1) = A_(k+1)\
+	"intersecting the LHS with " A_(k+2)\
+	A_k inter A_(k+1) inter A_(k+2) = A_(k+1) inter A_(k+2) = A_(k+2)\
+	A_k inter A_(k+1) inter A_(k+2) = A_(k+2)\
+$
+
+$
+	inter_(n=1)^k A_n = A_k\
+	inter_(n=1)^k A_n inter A_(k+1) = A_k inter A_(k+1)\
+	inter_(n=1)^(k+1) A_n = A_(k+1)\
+$
+
+Thus, for any finite $k$, the infinite intersection from $A_1$ upto $A_k$, but as proved within Exercise 1.2.2
+$
+	inter_(n=1)^oo A_n = emptyset
+$
+
+Thus we cannot use induction argument by just swapping in the value of $k= oo$.
+
+#pagebreak()
+
+
+(c) Is the statement in part (b) valid? IF so, write a proof that does not use induction.
 
 
 

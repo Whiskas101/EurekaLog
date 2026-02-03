@@ -1353,6 +1353,39 @@ Thus we cannot use induction argument by just swapping in the value of $k= oo$.
 
 
 (c) Is the statement in part (b) valid? IF so, write a proof that does not use induction.
+\ \
+*Solution:*
+\ \
+
+To prove:
+$
+	(limits(union)_(n=1)^oo A_n)^c = limits(inter)_(n=1)^oo A_n^c
+$
+
+
+Say:
+$
+	x in A_1 or x in A_2 => x in (A_1 union A_2)\
+	x in A_1 and x in A_2 => x in (A_1 inter A_2)\
+$
+And, since we can define complements as:
+$
+	A^c = {x | x in.not A}
+$
+
+Consider an element $x in (union_(n=1)^oo A_n$)^c:
+which means:
+$
+	x in (A_1 union A_2 union A_3 dots)^c  = x in.not (A_1 union A_2 union A_3 dots)\
+	x in.not A_1 and x in.not A_2 and x in.not A_3 dots\
+	x in A_1^c and x in A_2^c and x in A_3^c dots\
+	x in (A_1^c inter A_2^c inter A_3^c dots)\
+	x in inter_(n=1)^oo A_n^c
+$
+
+_(Do the same in the reverse direction to really prove inequality, im lazy)_
+
+
 
 
 

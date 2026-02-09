@@ -1680,5 +1680,63 @@ Since $1$ is present in all of these $mod 5$ sets for each possible
 multiplication, we can say that all items in the set have a multiplicative
 inverse.
 
+#pagebreak()
+(c) Not sure why there was a monologue about additive and multiplicative
+inverses being a part of the definition of a field?
+
+Given a set $Z_4 = {0,1,2,3}$
+
+Is there and additive inverse? 
+
+Well, in $mod 4$ we can represent all numbers as the following:
+- $4k$
+- $4k + 1$
+- $4k + 2$
+- $4k + 3$
+
+For each case, we can show each each item is $<=3$ away from reaching congruency with $0$.
+
+$
+	(4 k + 1 + 3) mod 4 equiv 0
+$
+
+And the numbers less than 3 are present in $Z_4$.
+
+$Z_4$ is closed under addition. 
+
+But what about multiplication? is there a multiplicative inverse? Going the brute force approach:
+
+$
+	Z_4 = {0,1,2,3}
+$
+
+The question to answer is simply can I say for certainty:
+$
+	forall z exists x : z x = 1 "Given that, " z, x in Z_4
+$
+
+I know now that can be proved by using the pigeonhole principle and using
+contradiction to show this operation is bijective, but only in the case of $mod
+n$ where $n$ is a prime number.
+
+
+But here, I'll use the trusty proof by exhaustion:
+
+- Multiplying all elements by 0, 1 leads to trivial cases, and are hence skipped.
+- For the case of multiplying by $2$ in $mod 4$
+$
+	(Z_4 times 2) mod 4 = {0, 2, 0, 2}
+$
+
+- Multiplication by 3
+$
+	(Z_4 times 3) mod 4 = {0, 3, 2, 1}
+$
+
+It's obvious that there's no guaranteed bijection here, particularly in the case of multiplication by $2$.
+Multiplying the set with a particular number is "destructive" you cannot undo the operation, which guarantees that there's no multiplicative inverse.
+
+_(Note: Write a more formal proof)_
+
 
 

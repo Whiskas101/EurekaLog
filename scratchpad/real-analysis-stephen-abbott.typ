@@ -1738,5 +1738,40 @@ Multiplying the set with a particular number is "destructive" you cannot undo th
 
 _(Note: Write a more formal proof)_
 
+pagebreak()
+
+== 1.3.2
+
+(a) Write a formal definition in the style of Definition 1.3.2 for the infimum or greatest lower bound of a set.
+
+*Solution*
+\ \
+
+A real number $s$ is the _greatest lower bound_ for a set $A subeq RR$ if and only if:
+- $s$ is a lower bound for $A$
+- if $b$ is any lower bound for $A$, s >= b
+
+
+
+
+(b) Now, state and prove a version of Lemma 1.3.7 for greatest lower bounds.
+
+\ \ \ 
+
+$s in RR$ is a lower bound for set $A subeq RR$. Then, $s = inf A$ if and only
+if, $forall epsilon > 0$ there exists an element $a in A$ such that $s +
+epsilon > a$
+
+Proving it:
+
+$s + epsilon > s$ holds true, given how we have defined $epsilon$.
+
+If we assume that $s = inf A$ then any non zero value of $epsilon$ would lead to $s + epsilon > a$, which means
+pushing even slightly towards the set $A$ on the number line, would push $s$ such that there would be *some* elements that violate
+the condition for $s + epsilon$ being a lower bound.
+
+On the other hand, if we assume that $s + epsilon$ doesn't lead to the violation of the lower bound definition, which means $forall a in A: s + epsilon <= a$ that would contradict the assumption that $s$ was the greatest lower bound, since a _new_ even _greater_ lower bound $s + epsilon$ has appeared!
+
+_(Note: formalization neeeeeeeded)_
 
 

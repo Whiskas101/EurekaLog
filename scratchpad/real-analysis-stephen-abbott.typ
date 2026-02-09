@@ -1,6 +1,7 @@
 = My solutions to the Real Analysis Exercises
 === From the book: _Real Analysis by Stephen Abbott_
 
+#import "@preview/cetz:0.4.2"
 
 #let subeq = math.subset.eq
 #let supeq = math.supset.eq
@@ -1386,6 +1387,298 @@ $
 _(Do the same in the reverse direction to really prove inequality, im lazy)_
 
 
+
+
+#pagebreak()
+
+== 1.3.1
+Let $Z_5 = {0, 1, 2, 3, 4}$ and define addition and multiplication
+modulo $5$. In other words, compute the integer remainder when $a + b$ and $a b$ are
+divided by $5$, and use this as the value for the sum and product, respectively.
+
+(a) Show that, given any element $z ∈ Z_5$, there exists an element $y$ such that
+$z + y = 0$. The element $y$ is called the additive inverse of $z$.
+
+(b) Show that, given any $z$  = 0 in $z_5$, there exists an element $x$ such that
+$z x = 1$. The element $x$ is called the multiplicative inverse of $z$.
+
+(c) The existence of additive and multiplicative inverses is part of the definition of a field. 
+Investigate the set $Z_4 = {0, 1, 2, 3}$ (where addition and
+multiplication are defined modulo $4$) for the existence of additive and multiplicative
+inverses. Make a conjecture about the values of $n$ for which additive
+inverses exist in $Z_n$, and then form another conjecture about the existence of
+multiplicative inverses.
+
+\ \
+*Solution*
+
+(a) Since the operations of addition and multiplication are defined modulo $5$,
+anything that shoots above $5$ is brought down until it's smaller than it.
+
+$
+	z + y = 0
+$
+
+While $z$ is constrained to it's set of five numbers, $y$ is not. Since
+addition is defined as modular over $5$, the sum of any two numbers cannot ever
+exceed $5$ _(Side note: just discovered `gQ` as a way to enter `:Ex mode`  in vim,
+which avoids drawing to the text buffer when operating on large files)_
+
+$ (z + y) mod 5 = 0\ "or", 5 | (z + y) \ "or", (z+y) = 5n \ $
+
+Therefore, there exists some $y = - z$, that is the additive inverse of any
+$z$, given the modular constraints of $5$, but wait, $-z$, or negative numbers
+aren't a thing within this set $Z_5$. But there's another way to wiggle our way
+to zero, that is, to add numbers within the set, and just hoping the modular
+property takes care of us.
+
+All the information that I have:
+- To get a value of zero, the sum of two numbers must equal $5$.
+
+For this case, it's trivial to show that each number has an additive inverse by
+sheer possibility space exhaustion. But in general, a set of 
+$
+	Z_n = {0, 1, 2, 3, dots, n-1}
+$ 
+With addition defined as $mod n$, we can show that, each number in the set can be represented alternatively, 
+in terms of $n$ as follows:
+$
+	Z_n = {n-n, n-(n-1), n-(n-2), dots, n-2, n-1}\
+	Z_5 = {5-5, 5 - 4, 5-3, 5-2, 5-1} = {0, 1, 2, 3, 4}
+$
+
+With this reimagined set, we can show that, each number can be paired up as such:
+
+The second number, and the last number, when added:
+$
+	n-(n-1) + (n-1) = n\
+	n mod n = 0
+$
+
+The third number, and the second last number, when added:
+$
+	n-(n-2) + (n-2) = n\
+	n mod n = 0
+$
+
+Now, for an even number of items in set $Z_(2n)$ take for example $Z_6$:
+
+$
+	Z_6 = {6 - 6, 6-5, 6-4, 6-3, 6-2, 6-1}
+$
+The pairing, apparently breaks, because well, there's seemingly *no pairing*
+for $6-3$, until you realize, it pairs with itself, much like the first element
+of each such set.
+
+Not sure how well this constitutes a proof, I'm just pairing stuff. A poor
+man's attempt at formalising it is given below:
+
+$
+	forall z: z in Z_n => exists k<=n : n - k in Z_n\
+	"where " Z_n = {0, 1, 2, 3, dots, n-1}\
+	"The alternative definition of  "Z_n= {n-(n), n-(n-1), n-(n-2), dots, n - 2, n - 1}
+$
+
+Given a $z + y = 0$, we can say $z + y equiv n$
+$
+	y = n - z
+$
+
+Since we know that $0 <= z < n$, that must also mean that $0 <= n - z <= n$
+
+For cases of $y = n - z, y < n$, $y in Z_n$, so for the values of positive $z$, we can say that $y + z = 0$ does hold.
+
+That leaves the case of $z$ being zero, because $n-z = n -0 = n$, which is not in the set $Z_n$
+we can show that for this edge case, $y = z$ satisfies the criteria of $y in Z_n$ and $y + z equiv 0$
+
+\ \
+
+(b) This has me stumped.
+$
+	forall z : z != 0 in Z_5 => exists x in Z_5 : z x = 1
+$
+
+This is effectively what I have to prove, that for every $z != 0$ within $Z_5$ there exists some $x$ within the same set that when multiplied with $z$ leads to 1. Of course, with modulo 5.
+
+To unpack what it means, if I multiply a number within the set, with another number within the set, I should end up with a number, within the original set, with some weirdness regarding zero, I'll avoid it for now.
+
+If I can show all the elements are mapped within $Z_5$ I should be set? For this, I should analyze what happens to multiplying and then applying $mod 5$ onto the result.
+
+$"let" z = 2$, and see what happens as it's multiplied by other numbers into the set.
+
+$
+	2 times 0 = 0\
+	2 times 1 = 2\
+	2 times 2 = 4\
+	2 times 3 = 6 mod 5 equiv 1\
+$
+
+Clearly, atleast for $z = 2$ there's a number within the set that does infact, lead to 1 when multiplied.
+$ x = 3 $ is the multiplicative inverse of $2$ in $Z_5$.
+
+For $z = 3$
+$
+	3 times 0 = 0\
+	3 times 1 = 3\
+	3 times 2 = 6 mod 5 equiv 1\
+	3 times 3 = 9 mod 5 equiv 4\
+$
+
+What exactly does it mean to be:
+
+$
+	3 n mod 5 equiv 1
+$
+
+I can imagine $3n$ to be a specific warping of the number line, or shrinkage or
+expansion, there's many ways to interpret it honestly. $0$ maps to $0$, $1$
+maps to $3$, $2$ maps to $6$ $dots$ and so on.
+
+#cetz.canvas({
+	import cetz.draw:*
+	let line-length = 10
+	let tick-step = 1
+
+	line((0,0), (line-length, 0), mark: (end:">"))
+
+	for x in range(line-length){
+		line((x, -0.1), (x, 0.1))
+		content((x, -0.4), [#x])
+	}
+
+	line((0, -2), (line-length, -2), mark:(end:">"))
+
+	for x in range(int(line-length/3 + 1)){
+		line((3*x, -2-0.1), (3*x, -2+0.1))
+		content((3*x, -2-0.4), [#(3*x)])
+	}
+
+	for x in range(4){
+		line((x, 0), (3*x, -2), stroke: (dash: "dotted"))
+	}
+
+})
+
+I'll go with expansion or more accurately stretching of the number line. But
+what does modulo $5$ do to the number line? It can be interpreted as a circle,
+since you can now walk around and come back to the same point again and again,
+as long as the mod operation is present. With these two concepts in mind, what happens to the stretched number line, as defined by $3n$? 
+
+
+#cetz.canvas({
+	import cetz.draw:*
+	let radius = 2
+	let num-marks = 5
+	
+	circle((0,0), radius: radius)
+	//circle((0.0), radius: radius, name:"c")
+
+	for i in range(num-marks * 3){
+		let angle = i * 360deg /num-marks
+		line((angle, radius * 0.9), (angle,radius))
+		content((angle, radius + calc.max(0.25, (0.1) * calc.floor(i+1/2))), [#i])
+	}
+
+
+})
+#pagebreak()
+
+
+#let modular_circle(
+  pos: (0,0), 
+  radius: 2, 
+  num_marks: 5, 
+  loops: 3, 
+  multiplier: 1.0, 
+  title: ""
+) = {
+  import cetz.draw:*
+  
+  group(name: "mod_circle", {
+    // Move the entire drawing to the specified position
+    translate(pos)
+    
+    content((0, radius + 1), [*n: #multiplier*], size: 10pt)
+    
+    circle((0, 0), radius: radius)
+
+    for i in range(num_marks * loops) {
+      let base_angle = i * 360deg / num_marks
+      let warped_angle = multiplier * i * 360deg / num_marks
+      
+      // Fixed labels at a constant distance
+      let label_dist = radius + 0.3
+      
+      // Draw reference (Red) and Warped (Blue) ticks
+      line((base_angle, radius * 0.95), (base_angle, radius), stroke: red + 1pt)
+      line((warped_angle, radius * 0.85), (warped_angle, radius * 0.95), stroke: blue + 1.5pt)
+	let rem = calc.rem(i, num_marks)
+      //content((warped_angle, label_dist), [#i], size: 7pt)
+      content((warped_angle, label_dist), [#rem], size: 7pt)
+    }
+  })
+}
+
+#cetz.canvas({
+  modular_circle(pos: (0, 0), multiplier: 1.0)
+  
+  modular_circle(pos: (6, 0), multiplier: 1.05)
+  
+  modular_circle(pos: (12, 0), multiplier: 1.2)
+
+  modular_circle(pos: (0, -6), multiplier: 1.25)
+  modular_circle(pos: (6, -6), multiplier: 1.35)
+  modular_circle(pos: (12, -6), multiplier: 1.5)
+
+  modular_circle(pos: (0, -12), multiplier: 1.6)
+  modular_circle(pos: (6, -12), multiplier: 1.67)
+  modular_circle(pos: (12, -12), multiplier: 1.69)
+
+  modular_circle(pos: (0, -18), multiplier: 1.72)
+  modular_circle(pos: (6, -18), multiplier: 1.73)
+  modular_circle(pos: (12, -18), multiplier: 2)
+})
+
+Its visually rather clear that atleast for $mod 5$ the number line itself just shifts around as you scale the input.
+
+#cetz.canvas({
+  modular_circle(pos: (12, -18), multiplier: calc.pi, loops: 4)
+})
+
+
+
+Well, I give up, I'll pivot to a proof by exhaustion.
+
+For the set $Z_5 = {0,1,2,3,4}$
+
+Multiplying the set's elements by $1$:
+$
+	Z_5 = {0, 1, 2, 3, 4}\
+	"Mod 5", {0, 1, 2, 3, 4}
+$
+Multiplying the set's elements by $2$:
+$
+	Z_5 times 2= {0, 2, 4, 6, 8}\
+	"Mod 5", {0, 2, 4, 1, 3} \
+	"Huh, a permutation of the original set?"
+$
+Multiplying the set's elements by $3$:
+$
+	Z_5 times 3 = {0, 3, 6, 9, 12}\
+	"Mod 5", {0, 3, 1, 4, 2} \
+	"A permutation of the original set, yet again?"
+$
+Multiplying the set's elements by $4$:
+$
+	Z_5 times 4 = {0, 4, 8, 12, 16}\
+	"Mod 5", {0, 4, 3, 2, 1} \
+	"Another permutation!"
+$
+
+There's something here about the $mod 5$ of the set being the same set.
+Since $1$ is present in all of these $mod 5$ sets for each possible
+multiplication, we can say that all items in the set have a multiplicative
+inverse.
 
 
 

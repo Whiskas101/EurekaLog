@@ -1774,4 +1774,81 @@ On the other hand, if we assume that $s + epsilon$ doesn't lead to the violation
 
 _(Note: formalization neeeeeeeded)_
 
+#pagebreak()
+
+== 1.3.3
+
+(a) Let $A$ be bounded below and define $B = {b in RR : b "is a lower bound for" A}$. Show that $sup B = inf A$.
+
+(b) Use (a) to explain why there is no need to assert that greatest upper bounds exist as part of the *Axiom of Completeness.*
+
+(c) Propose another way to use the Axiom of Completeness to prove that sets bounded below have greatest lower bounds.
+\ 
+
+*Solution*
+ \ \
+
+(a) From the definition of being bounded below, we know that there exists some
+element $p$ such that $forall a : p < a in A$. With the way $B$ is defined, all
+it's elements are smaller than any element in $A$.
+
+$
+	b < a\
+	forall b in B\
+	forall a in A\
+$
+
+Supremum of $B$ would be such an element such that it's bigger than any element in $B$.
+But it's additionally constrained by the definition that it must also be a lower bound of $A$.
+
+$
+	"Put formally, "\
+	exists b_n : b_s - epsilon < b_n\
+	b_s "the supremum of" B "loses it's status as such, if nudged by" epsilon > 0 "to" b_n
+$
+
+How does this nudge interact with the definition of $A$?
+
+$
+	"The infimum of" A\
+	exists a_n : a_i + epsilon > a_n
+	"Even a slight nudge" epsilon "leads to some value" a_n\ 
+	"being greater than the infimum" a_i "implying that it no longer is a lower bound on" A 
+$
+
+Assuming these two _can_ be seperate numbers.
+$
+	a_i != b_s
+$
+
+From the definition of $B$, $b_s < a_n $ for all values of $a_n in A$ 
+
+Playing around with the inequalities above, since $b_s$ supremum, must be the _*least*_ upper bound, and how the values of $B$ relate to $A$.
+
+$
+	exists b : b_s - epsilon < b\
+	"since all" b < a\
+	exists a: b_s - epsilon < a\
+	exists a: b_s < a + epsilon \
+$
+
+$b_s$ the supremum is the least upper bound on $B$, but is lesser than some $a + epsilon$.
+Here, $a$, unfortunately is not necessarily the $inf A$. But what is the
+infimum then? Well, as shown before it's simply a value such that even if nudged some $epsilon$ would cause another $a$ to take it's place!
+
+Wait, even simpler. shifting the supremum of $B$, $b_s$ by some $epsilon$, shows that it would be smaller than $a$, that shows that the supremum is indeed a lower bound of $A$. Which is something new, since the supremum is not necessarily a part of the set it bounds over, I left room for the possibility that the supremum might not have been bound by the rules that created the very set it bounds over, so for now, $b_s - epsilon$ is a lower bound on $A$. The ideal situation is to prove that this lower bound, is the greatest lower bound of $A$.
+
+$
+	inf A = a | a + epsilon < a_n in A
+$
+
+Since all values of $a$ are bigger than all values of $b$, no value in $A$ would belong in $B$, unless we allow for some $epsilon > 0$ leeway into the mix.
+The question is simple: Can there be a lower bound of $A$ that's bigger than the supremum of $B$?
+
+We already know that $sup B$ is a lower bound of $A$, which means no element in $A$ itself can be smaller than the $sup B$, the only interesting pathway of ambiguity remaining is, what about the infimum of $A$? is it an upper bound on $B$? 
+
+if the two are really separate numbers, then what belongs in between them? Anything greater than the $inf A$ would not possibly be in $B$, therefore it cannot not be in $B$. Anything below the $sup B$ is in $B$, therefore cannot be in $A$. So there's no elements that can be in this gap. The gap is non existent, so the two must be equal.
+
+_(Not quite satisfied with this proof.)_
+
 

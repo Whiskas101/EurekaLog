@@ -227,4 +227,47 @@ $
 In that case, $sup B$ cannot be greater than $sup A$, because all elements of $b$ are smaller than some element of $A$. This causes a contradiction. Therefore, there must be atleast one element in $B$ capable of being an upper bound on $A$.
 
 
+#pagebreak()
+
+== 1.3.9
+
+Without worrying about formal proofs for the moement, decide if the following comments about suprema and infima are true or false. For any that are false, supply an example where the claim in question does not appear to hold.
+
+(a) A finite, nonempty set always contains its supremum.\
+(b) If $a < L$ for every element $a$ in the set $A$, then $sup A < L$.\
+(c) If $A$ and $B$ are sets with the property that $a < b$ for every $a in A$ and every $b in B$, then it follows that $sup A < inf B$.\
+(d) If $sup A = s$ and $sup B = t$, then $sup (A + B)  = s + t$. The set $A + B$ is defined as $A + B = {a + b; a in A and b in B}$.\
+(e) If $sup A <= sup B$, then there exists an element $b in B$ that is an upper bound for $A$.
+
+*Solution*
+
+
+(a) A finite, nonempty set always contains its supremum.\
+
+If there is a defined order, yes. A finite nonempty set will contain it's supremum.\ \
+
+(b) If $a < L$ for every element $a$ in the set $A$, then $sup A < L$.
+
+Not necessarily, the supremum may *equal* said variable. That is, $sup A <= L$ .\ \
+
+(c) If $A$ and $B$ are sets with the property that $a < b$ for every $a in A$ and every $b in B$, then it follows that $sup A < inf B$.\
+
+False.
+$
+	A = (0, 1), B = (1,2)\
+	sup (A) = 1 = inf (B)
+$
+
+It's an equality, instead of the strict inequality, hence, false.
+\ \
+
+(d) If $sup A = s$ and $sup B = t$, then $sup (A + B)  = s + t$. The set $A + B$ is defined as $A + B = {a + b; a in A and b in B}$.\
+
+True
+\ \
+(e) If $sup A <= sup B$, then there exists an element $b in B$ that is an upper bound for $A$.
+
+This one is different from the last one where the constraint was $ sup A < sup B$. It's got that equality constraint added on. WHICH leaves the possibility for the suprema to overlap. The two sets $A$ and $B$ could be equal.
+
+IF $A = B$ and both are non finite, and do not contain their suprema, then $sup A = sup B$ but there exists no $b in B$ that can be an upper bound for $B$, and by extension for $A$.
 

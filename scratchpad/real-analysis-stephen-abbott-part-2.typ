@@ -120,6 +120,24 @@ $
 
 == 1.3.6
 
+Compure without proofs, the suprema and infima of the following:
+
+(a) $ { n in N: n^2 < 10}$\
+(b) ${n/(m + n) : m, n in N}$\
+(c) ${n/ (2n +1 ): n in N}$\
+(d) ${n/m : m,n in N "with" m + n <= 10}$\
+
+*Solution*
+
+(a) Well it's simple. The smallest value of n that wont violate the constraint (in $NN$) would be 1. And the maximum would be 3. Those are the infimum and supremums respectively.
+
+(b) Infimum is zero, supremum is 1.
+
+(c) Assuming zero is not in $NN$. $1/2$ is the supremum. $1/3$ is the infimum.
+
+(d) 9 is the supremum, $1/9$ the infimum.
+
+
 
 
 

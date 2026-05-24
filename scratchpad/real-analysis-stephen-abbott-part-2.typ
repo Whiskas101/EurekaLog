@@ -142,4 +142,49 @@ Compure without proofs, the suprema and infima of the following:
 
 
 
+#pagebreak()
+
+=== 1.3.7
+
+Prove that if $a$ is an upper bound for $A$, and if $a$ is also an element of $A$, then it must be that $a = sup A$.
+
+*Solution*
+
+Given that $a$ is an upper bound on $A$ and $a in A$:
+$
+	a >= x : forall x in A\
+	a in A
+$
+
+Every element greater than $a$ must not belong in $A$. Because if it did,
+it would contradict $a$ being an upper bound. 
+
+$
+	x in.not A "if" x > a\
+$
+Since an element, say $y$ bigger than it lying within $A$ would not satisfy
+the requirements of $a$ being an upper bound.
+$
+	"say" exists y : y > a\
+	"such that:" y >= x : forall x in A\
+	"but" a >= x : forall x in A\
+$
+
+Every non-supremum but upper bound of $A$ that is greater than $a$ must therefore, not belong in A. The supremum is:
+
+$
+	s >= x : forall x in A " st." s <= s' "where" s' "is any upper bound on "A\ 
+$
+
+If $s < a$, then $s$ is no longer an upper bound in $A$, because it would imply that it's smaller than an element $a$ already within the set, if the supremum $s$ > $a$, then it's no longer a supremum, given that there would exist $a$, an upper bound smaller than it.
+
+This leaves with the only possibility that $s = a$, i.e., 
+$
+	sup (A) = a
+$
+
+
+
+
+
 

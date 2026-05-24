@@ -184,7 +184,47 @@ $
 $
 
 
+#pagebreak()
 
+== 1.3.8
+
+If $sup A < sup B$, then show that there exists an element $b in B$ that is an upper bound for $A$.
+
+*Solution*
+
+Given $s$, $q$ such that
+$
+	s >= a : forall a in A\ 
+	q >= b : forall b in B\
+	q > s
+$
+
+We can deduce: 
+$
+	s != q \
+	sup (A) != sup (B)\
+	
+	exists p' in.not A "such that" p' > sup (A)
+$
+
+Pondering what a supremum being strictly different implies, we can see that
+$
+	|A| > 0\
+	|B| > 0\
+	A != B\
+$
+
+There is atleast one element in $B$, in the worst case, this element in $B$, must be big enough to satisfy the constraint of being an upper bound for $A$.
+
+Let's assume that there are no elements in $B$ that can be an upper bound of $A$.
+
+$
+	forall b in B,\ 
+	exists a in A: a > b\
+	space => sup B <= sup A
+$
+
+In that case, $sup B$ cannot be greater than $sup A$, because all elements of $b$ are smaller than some element of $A$. This causes a contradiction. Therefore, there must be atleast one element in $B$ capable of being an upper bound on $A$.
 
 
 

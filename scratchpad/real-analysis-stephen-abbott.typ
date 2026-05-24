@@ -1839,7 +1839,7 @@ infimum then? Well, as shown before it's simply a value such that even if nudged
 Wait, even simpler. shifting the supremum of $B$, $b_s$ by some $epsilon$, shows that it would be smaller than $a$, that shows that the supremum is indeed a lower bound of $A$. Which is something new, since the supremum is not necessarily a part of the set it bounds over, I left room for the possibility that the supremum might not have been bound by the rules that created the very set it bounds over, so for now, $b_s - epsilon$ is a lower bound on $A$. The ideal situation is to prove that this lower bound, is the greatest lower bound of $A$.
 
 $
-	inf A = a | a + epsilon < a_n in A
+inf A = a | a + epsilon < a_n in A
 $
 
 Since all values of $a$ are bigger than all values of $b$, no value in $A$ would belong in $B$, unless we allow for some $epsilon > 0$ leeway into the mix.
@@ -1850,5 +1850,54 @@ We already know that $sup B$ is a lower bound of $A$, which means no element in 
 if the two are really separate numbers, then what belongs in between them? Anything greater than the $inf A$ would not possibly be in $B$, therefore it cannot not be in $B$. Anything below the $sup B$ is in $B$, therefore cannot be in $A$. So there's no elements that can be in this gap. The gap is non existent, so the two must be equal.
 
 _(Not quite satisfied with this proof.)_
+
+
+#pagebreak()
+
+== 1.3.4
+Assume that $A$ and $B$ are nonempty, bounded above, and satisfy B $subeq$ A. Show that $sup B <= sup A$,
+
+
+*Solution*
+
+Since $A$ and $B$ are nonempty. Their cardinality is greater than 0.
+$
+	|A| > 0 \
+	|B| > 0
+$
+And BOTH have an upper bound. There exists some value that's bigger than every element in each set. 
+
+The key insight here is that B is a subset of A. Even if B stretched itself to be at the very edge of that subset definition, in that it were equal to A, it would still be bound by the supremum of A.
+
+
+Given that $B$ is a subset of $A$, transitively, $sup A$ must at the very least be *one* of the upper bounds of $B$. In that case, for $sup B$ to *really* be a supremum, it must be the least upper bound. That is, $sup B <= sup A$.
+
+
+
+#pagebreak()
+
+== 1.3.5
+
+Let $A subeq RR$ be bounded above, and let $c in RR$. Define the sets $c + A$ and $cA$ by $c + A = {c + A : a in A}$ and $cA = {ca: a in A}$.
+
+(a) Show that $sup (c + A) = c + sup A$
+(b) If c >= 0, show that $sup (cA) = c times supA$
+(c) Postulate a similar type of statement for $sup (cA) for the case c < 0$
+
+*Solutions*
+\
+(a)
+\
+\
+(b)
+\
+\
+(c)
+\
+
+
+
+
+
 
 

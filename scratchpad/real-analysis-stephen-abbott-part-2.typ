@@ -271,3 +271,32 @@ This one is different from the last one where the constraint was $ sup A < sup B
 
 IF $A = B$ and both are non finite, and do not contain their suprema, then $sup A = sup B$ but there exists no $b in B$ that can be an upper bound for $B$, and by extension for $A$.
 
+
+#pagebreak()
+
+Theorem proofs.
+Proving that $NN$ is not bounded over.
+
+Assuming for contradiction, that $NN$ is indeed bounded over.
+Therefore, there must be a supremum of $NN$.
+
+$
+	alpha = sup NN
+$
+
+Then $alpha - 1$ implies that there must be some value of $n in NN$ such that 
+$
+	alpha - 1 < n
+$
+
+This is from Lemma 1.3.7. Which basically says for any $epsilon > 0$, $s$ is the supremum of set $A$  
+$
+	"iff" s - epsilon < n "where" n in A
+$
+
+Then, it's easy to show that
+$
+	alpha < n + 1
+$
+
+But $n + 1 in NN$ because it's closed over addition, therefore our assumption that $alpha$ is a supremum, and that $NN$ is bounded over, must be incorrect.

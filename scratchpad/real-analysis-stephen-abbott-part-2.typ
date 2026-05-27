@@ -300,3 +300,67 @@ $
 $
 
 But $n + 1 in NN$ because it's closed over addition, therefore our assumption that $alpha$ is a supremum, and that $NN$ is bounded over, must be incorrect.
+
+
+
+#pagebreak()
+
+Theorem 1.4.3: The density of $QQ$ in $RR$
+
+
+given a number line, we need to first think in terms of a resolution.
+Consider two numbers $a, b in RR$  on the number line. The goal is to show that there exists a rational number between any two arbitrary intervals created by $a, b$ on the real line.
+$
+	"To Prove: "\
+	a < frac(m,n) < b " " a, b in RR, m,n in NN, n != 0
+$
+
+First we figure out a resolution 1/n that lets us step INTO this arbitrarily small interval defined by $a, b$.
+$
+	frac(1, n) < b - a\
+	n b - n a > 1\
+	n b > 1 + n a
+$
+
+Consider then the initial to prove requirements multiplied by $n$.
+
+$
+	n a < m < n b\
+$
+
+Thinking carefully, we can again call upon the archimedes principle to find the *smallest integer* greater than $n a$, and let that be $m$.
+
+$
+	m - 1 <= n a < m
+$
+It naturally stands to reason that $m - 1$ would be smaller than $n a$, or atleast equal to it. I like to use an example to explain why:
+$
+	"Let" n a = 3\
+	"Smallest integer greater than it? : " 4\ 
+	4 - 1 = 3, 3 < 3 "would not be acceptable."
+$
+
+That's why the relation between $m-1$ and $n a$ involves equality. The reason why this equality is not shifted upwards like: $n a <= m$, is that our constraints $a < m / n < b$, that enforces that $n a < m$ be a strict inequality.
+
+Now, using 
+$
+	m-1 <= n a\
+	m <= 1 + n a\
+	n b > 1+ n a "or" 1+n a < n b\
+	m <= 1+n a < n b\
+	m < n b
+$
+
+We already have $n a < m$ from the archimedes thing, putting it all together
+$
+	 n a < m < n b\
+$
+Dividing by $n$
+$
+	  a < m/n<  b\
+$
+
+Hence proved.
+
+
+

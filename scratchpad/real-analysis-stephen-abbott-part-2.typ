@@ -284,7 +284,7 @@ $
 	alpha = sup NN
 $
 
-Then $alpha - 1$ implies that there must be some value of $n in NN$ such that 
+Then $alpha - 1$ implies that there must be some value of $n in ZZ$ such that 
 $
 	alpha - 1 < n
 $
@@ -299,7 +299,7 @@ $
 	alpha < n + 1
 $
 
-But $n + 1 in NN$ because it's closed over addition, therefore our assumption that $alpha$ is a supremum, and that $NN$ is bounded over, must be incorrect.
+But $n + 1 in ZZ$ because it's closed over addition, therefore our assumption that $alpha$ is a supremum, and that $NN$ is bounded over, must be incorrect.
 
 
 
@@ -312,7 +312,7 @@ given a number line, we need to first think in terms of a resolution.
 Consider two numbers $a, b in RR$  on the number line. The goal is to show that there exists a rational number between any two arbitrary intervals created by $a, b$ on the real line.
 $
 	"To Prove: "\
-	a < frac(m,n) < b " " a, b in RR, m,n in NN, n != 0
+	a < frac(m,n) < b " " a, b in RR, m,n in ZZ, n != 0
 $
 
 First we figure out a resolution 1/n that lets us step INTO this arbitrarily small interval defined by $a, b$.
@@ -363,4 +363,126 @@ $
 Hence proved.
 
 
+#pagebreak()
+
+== 1.4.1
+WIthout doing too much work, show that Theorem 1.4.3 can be proven for the case $alpha$ < 0, by converting this case into the one already proven.
+
+*Solution*
+
+Simply put, Theorem 1.4.3 proves the existence of square roots.
+Particularly it states that there exists a Real Number such that $alpha$ such that $alpha^2 < 2$. It's goal is proving $sqrt(2) in RR$.
+$
+	alpha = sup T = sqrt(2)\
+	T = { x in RR: x^2 < 2 }
+$
+
+It was proven for $alpha > 0$. But taking note of $f(x) = x^2$\
+It is an even function!
+$
+	f(-x) = x^2 = f(x)
+$
+
+Therefore the existing proof also works for the cases of $alpha < 0$.
+
+
+#pagebreak()
+
+== 1.4.2
+Recall that $II$ stands for the set of Irrationals.\
+(a) Show that $a, b in QQ$ then $a b$ and $ a + b in QQ$ as well.\
+(b) Show that $a in QQ$ and $t in II$, then $a + t in II$ and $a t in II$ for $a != 0$.\
+(c) Part (a) can be summarized by saying $QQ$ is closed under addition and multiplication. Is $II$ closed under addition and multiplication? Given two irrationals $s, t$ what can we say about $s + t$ and $s t$?\
+
+_(I got very lazy and accidentally used x, y != 0 in Z to mean 
+	x in Z AND y != 0 in Z. Laziness in me is also why I am writing this message instead of refactoring each instance. (maybe one day)
+	)_
+
+*Solution*
+
+(a) Show that $a, b in QQ$ then $a b$ and $ a + b in QQ$ as well.\
+
+The question kind of gives it away. But yes, $QQ$ being closed under addition is the solution. I will prove it regardless just to be extra.
+
+$
+	x in Q => exists m, n != 0 in ZZ: m / n in QQ
+$
+
+Hence we can represent two rationals $a, b$ using $m, n != 0, p, q != 0 in ZZ$
+
+$
+	a + b = m / n + p / q\
+	a + b = (m p + n q) / (n q)\
+$
+
+Since both $n, q != 0$, division is safe. And since I chicken out and invoke the closure of $ZZ$ over addition and multiplication. I can say the following:
+$
+	x y in ZZ "if" x in ZZ and y in ZZ\
+	x+ y in ZZ "if" x in ZZ and y in ZZ\
+$
+
+Therefore the expression holds true:
+$
+	a + b in QQ : forall a, b in ZZ\
+	a b in QQ : forall a,b in ZZ
+$
+
+Both are proven, because it's simply natural numbers being operated on, with the explicit guarantee that no divisor is zero.
+
+#pagebreak()
+(b) Show that $a in QQ$ and $t in II$, then $a + t in II$ and $a t in II$ for $a != 0$.\
+
+This is a bit more interesting.
+We can represent $a = p/q$ where $p, q != 0 in ZZ$, but not $t in II$, because duh, that's it's entire definition, it cannot be of the form of two natural numbers' division.
+
+Let's assume that $a + t in QQ$
+
+$
+	a + t = p/q + t in QQ\
+	(p+ q t)/q in QQ\
+$
+
+To get any further now, we must first figure out what a product of a rational and irrational yields. So we take a detour to solve $a t$ first.
+
+Let us again assume $a t in QQ$.
+
+$
+	a t = p/q times t in QQ\
+	p/q times t in QQ\
+$
+
+If $(p t )/ q$ is a rational, we can represent it as $x/y$ with $x, y!= 0 in ZZ$.
+
+$
+	(p t)/ q = x / y\
+	"Rearranging:" t = (x q)/(y p) " where" x, q, y, p in ZZ and y p != 0
+$
+
+Which turns out to imply $t$ must be a rational number. But we know for a fact it is not. Therefore, the assumption $a t in QQ$ must be incorrect.
+
+$
+	therefore a t in II
+$
+
+With the above proof we can go back to revisit $a + t in QQ$ assumption.
+
+$
+	a + t = p/q + t in QQ\
+	(p+ q t)/q in QQ\
+$
+
+We now know that $q t in II$. Let's say $k = q t$. $k in II$, of course.
+Since we made the assumption that $a + t in QQ$, let's pick valid $x, y!= 0 in ZZ$ such that:
+
+$
+	(p + k)/q = x / y \
+	k = (x q)/(y) - p
+$
+
+We proved above that $QQ$ is closed under addition and multiplication.
+So this above expression claims that $k in QQ$. But clearly, it's defined as an irrational. This means out assumption that $a + t in QQ$ was incorrect.
+
+$
+	therefore a + t in II
+$
 

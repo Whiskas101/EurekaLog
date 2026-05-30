@@ -527,6 +527,23 @@ For $p = 0$, that number shoots up to infinity, and for the rest, it implies tha
 
 
 
+#pagebreak()
+
+== 1.4.3
+Using exercise 1.4.2, supply a proof for corollary 1.4.4 by applying theorem 1.4.3 to the real numbers $a-sqrt(2)$ and $a+sqrt(2)$.
+
+
+*Solution*
+
+Well, for context:
+
+*Corollary 1.4.4:
+Given two real numbers $a < b$, there exists an irrational number $t$ such that $a < t < b$.
+*
+
+*Theorem 1.4.3 is the theorem about the density of $QQ$ in $RR$.*
+
+
 
 
 

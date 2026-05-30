@@ -175,7 +175,7 @@ $
 
 With that outcome. The optimal path.
 
-#let r = (1 / calc.cos(0.28995))
+#let r = (1 / calc.cos(0.28995rad))
 #draw_shore_path(2.1, radius: r, dist: 1)
 #draw_shore_path(6.1, radius: r, dist: 1)
 

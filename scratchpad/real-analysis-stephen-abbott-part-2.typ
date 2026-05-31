@@ -669,3 +669,16 @@ $
 
 
 Thus, we have shown, there are irrationals to be found within any arbitrary real interval.
+
+
+*EXTRA:* I got lost within the fact that I could prove it from the ground up. I didn't realize a ridiculously simply method of this proof.
+
+Given that we have the interval $a - sqrt(2)$ and $b - sqrt(2)$. We can invoke Theorem 1.4.3 directly, to now obtain a rational value $m/n in QQ$ that exists within the given boundary.
+$
+  a - sqrt(2) < m/n < b - sqrt(2)
+$
+Finally, we add $sqrt(2)$ from the inequality obtained from the theorem.
+$
+  a < m/n + sqrt(2) < b
+$
+Irrationals are closed under addition, $m/n - sqrt(2) in II$, thus we can always find an irrational between two real numbers.

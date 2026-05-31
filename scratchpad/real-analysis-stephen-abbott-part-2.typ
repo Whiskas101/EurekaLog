@@ -530,7 +530,7 @@ For $p = 0$, that number shoots up to infinity, and for the rest, it implies tha
 #pagebreak()
 
 == 1.4.3
-Using exercise 1.4.2, supply a proof for corollary 1.4.4 by applying theorem 1.4.3 to the real numbers $a-sqrt(2)$ and $a+sqrt(2)$.
+Using exercise 1.4.2, supply a proof for corollary 1.4.4 by applying theorem 1.4.3 to the real numbers $a-sqrt(2)$ and $b-sqrt(2)$.
 
 
 *Solution*
@@ -543,7 +543,129 @@ Given two real numbers $a < b$, there exists an irrational number $t$ such that 
 
 *Theorem 1.4.3 is the theorem about the density of $QQ$ in $RR$.*
 
+Well, it's not explicitly asked here, but i shall begin by proving that
+$
+  a < m/n < b\
+  "for" a, b in RR, m, n in ZZ, n > 0
+$
+
+Well, firstly it's important to pick an $n$ big enough to have $1/n$ small enough to provide a number line of sorts. Imagined as a series:
+$
+  1/n, 2/n, 3/n, dots
+$
+
+Effectively, if we pick a large enough $n$, we should be able to find a $k/n, k in ZZ$ such that it lies somewhere along $a, b$ on the number line. For this to be a guarantee, we must ensure our step size $(1/n)$ is smaller than the interval size $b - a$, which would guarantee that at the very least, one such $k/n$ falls into the interval.
 
 
+for a non-zero interval ($a != b$)
+
+$
+  b - a > 0\
+$
+
+But from the Archimedean property, we have:
+$
+  forall epsilon > 0, exists n in NN: e > 1/n
+$
+
+Here, we just swap in $b-a = epsilon$
+$
+  b - a > 1/n\
+  n b - n a > 1\
+  n b > 1 + n a \
+$
+
+Now, we have a large enough $n$, the question remains: what about $m$?
+Well, the same archimedean principle guarantees that for every real number, we can find an integer that's larger than it.
+
+$
+  forall x in RR, exists n in ZZ: n > x
+$
+
+That also means, you can always find, an $n$ such that it's just barely larger than $x$. That's precisely what we define $m$ to be. Except, $x = n a$ here.
+
+$
+  n a < m\
+  "naturally, " m - 1 < n a < m
+$
+
+A bit of inequality magic:
+$
+  m - 1 < n a\
+  n a + 1 > m\
+  "But, we know: " n b > n a + 1
+$
+
+So, it's easy to put them together to show:
+$
+  m < n a + 1 < n b\
+  m < n b
+  "previously: " n a < m
+$
+Finally:
+$
+  n a < m < n b\
+  a < m/n < b\
+$
+
+And lo and behold, between any two reals, there exists a rational!
+
+Now, this is not what the question asked, but it was needed for the next magic trick. Let's imagine an irrational number we know to be irrational $sqrt(2)$ (I did go through this proof in part one so i will not extend this already too long of a proof.)
+
+We know from the archimedean principle that given any real $epsilon$:
+$
+  forall epsilon in RR, exists n in ZZ : 1/n < epsilon
+$
+
+We have to prove that just how we can find a real (rational, really) number $1/n$ smaller than any given $epsilon > 0$, we can find an irrational smaller than $epsilon$.
+
+$
+  sqrt(2)/n' < 1/n => n' > sqrt(2)n
+$
+So we can reframe the archimedean principle for irrationals now as :
+
+$
+  forall epsilon > 0 in RR, exists n in ZZ : sqrt(2)/(n) < epsilon
+$
+
+This proves, that no matter the number, we can find a irrational just smaller than it.
 
 
+Since irrationals are closed under addition:
+$
+  m/n + j in II
+$
+So, if we just slot this in to the previous statement about rationals always existing in between two reals:
+$
+  a < m/n + j < b
+$
+
+Now ofcourse, the argument could be made that $j$ being added might push the result over the boundary of $b$. But fear not, we can simply "find" a more "accomodating" rational between $a$ and $b$. To do that, we must prove that there exists a rational small enough that when $j$ is added to it, it doesn't shoot past $b$ or fall under $a$.
+
+Consider the gap between $m/n$ and $b$, and pick a suitable $j > 0$ that guarantees we do not overshoot $b$.
+
+$
+  j < b - m/n\
+  n j < n b - m\
+  m + n j < n b
+$
+
+$
+  "As proven earlier, we can always find a" j in II "given",\
+  0 < j < b - m/n
+$
+
+$$
+
+We know from the proof about density of $QQ$ in $RR$:
+$
+  a < m/n < b\
+  n a < m < n b\
+  "We know" m < m + n j\
+  n a < m < m + n j < n b\
+  n a < m + n j < n b\
+  a < m/n + j < b
+$
+
+
+Thus, we have shown, there are irrationals to be found within any arbitrary real interval.

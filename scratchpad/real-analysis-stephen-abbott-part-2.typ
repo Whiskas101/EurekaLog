@@ -682,3 +682,70 @@ $
   a < m/n + sqrt(2) < b
 $
 Irrationals are closed under addition, $m/n - sqrt(2) in II$, thus we can always find an irrational between two real numbers.
+
+
+#pagebreak()
+
+== 1.4.4
+Using the Archimedean property of $RR$ to rigorously prove that $inf{1/n : n in NN} = 0$.
+
+
+*Solution*
+
+A neat thing I always forget, people disagree about whether natural numbers contain zero or not, apparenly. Well, here it's assumed $0 in.not NN$, given it's a real analysis book.
+
+The Archimedean propery states:
+$
+  forall epsilon > 0 in RR, exists n in NN : 1/n < epsilon
+$
+
+Infimum's definition states that it's the greatest lower bound.
+Lower bound $l$ of a set $A$ is defined as:
+$
+  forall a in A: l <= a
+$
+
+Infimum is the greatest of all possible lower bounds.
+$
+  forall l in L: inf(A) >= l, "where" L "is the set of all lower bounds of" A
+$
+
+Or put differently
+$
+  forall a in A: inf(A) <= a\
+  forall epsilon > 0, exists a in A: inf(A) + epsilon > a
+$
+
+Let's begin by proving the first part, that $0$ must be lower than all elements in the given set
+
+$
+  T = {1/n: n in NN}
+$
+
+Given that $n in NN$, $1/n$ can never be negative. The proof can be given by simply contractive proof. Assume there exists some $n in NN$ such that $1/n$ is negative.
+
+$
+  1/n < 0 => 1 < 0 "(no sign flip since "n" is strictly positive)"
+$
+
+This is untrue, so such an number cannot be possible. Therefore:
+$
+  0 < 1/n, forall n in NN
+$
+
+This establishes the first condition that $0$ is a lower bound. The second half is about proving that zero truly is the greatest lower bound on this set $T$. A tiny miniscule shift $epsilon > 0$ to $inf T$ would make it not be the infimum anymore.
+
+$
+  epsilon > 0,\
+  exists n in NN: inf T + epsilon > 1 / n
+$
+Archimedean property shows that any positive value will always have a value smaller than it, making $0$ the defacto greatest lower bound, for this interval.
+$
+  forall epsilon > 0, exists n in NN : 1/n < epsilon\
+$
+
+
+This implies there is a $1/n$ that can be smaller than $epsilon$, making it no longer a lower bound. We demonstrated that even an arbitrary shift in $0$ makes it lose the status of lower bound, therefore, $0 = inf T$
+
+
+

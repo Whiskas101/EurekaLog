@@ -749,3 +749,33 @@ This implies there is a $1/n$ that can be smaller than $epsilon$, making it no l
 
 
 
+#pagebreak()
+
+
+== 1.4.5
+Prove that
+$
+  inter_(n=1)^infinity (0, 1/n) = emptyset
+$
+
+
+*Solution*
+
+Let's just assume that the given statement is untrue, that there does exist from $x$ that belongs in this resulting infinite intersection.
+
+$
+  exists x : x in inter_(n=1)^infinity (0, 1/n)
+$
+
+Assuming that $x in (0, 1/n)$ (realistically we only need $x > 0$). We can invoke the Archimedean property:
+$
+  forall x, exists n_0 in NN : 1/n_0 < x
+$
+
+So there's always some interval, that leaves any arbitrary $x$ out.
+$
+  x in.not (0, 1/n_0)
+$
+
+Therefore, it must be impossible for the given set to have any elements.
+

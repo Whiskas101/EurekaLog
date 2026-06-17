@@ -767,6 +767,11 @@ $
   exists x : x in inter_(n=1)^infinity (0, 1/n)
 $
 
+If $x$ is in the set, then
+$
+  0 < x < 1/n
+$
+
 Assuming that $x in (0, 1/n)$ (realistically we only need $x > 0$). We can invoke the Archimedean property:
 $
   forall x, exists n_0 in NN : 1/n_0 < x

@@ -784,3 +784,66 @@ $
 
 Therefore, it must be impossible for the given set to have any elements.
 
+#pagebreak()
+
+== 1.4.6
+(a) Finish the proof of Theorem 1.4.5 by showing that the assumption $alpha > 2$ leads to a contradiction of the fact that the $alpha = sup T$.
+\
+(b) Modify this argument to prove the existence of $sqrt(b)$ for any real number $b >= 0$.
+
+
+*Solution*
+
+
+Well it's simple:
+
+Assuming
+$
+  a^2 > 2,\
+  a = sup T
+$
+
+we begin searching for some element :
+$
+  (a - 1/n)^2 > 2
+$
+
+Because if we can find such a mystical $n$, then we can show that $a$ is not a supremum, because a number $a - 1/n$ that's smaller than it, is still an upper bound on $T$, thereby destroying the actual definition constraint it needs to be called a supremum.
+
+$
+  a^2 - 2 > 0,\
+  1/n_0 < a^2 - 2
+$
+
+We can now jump into the actual potentially useful number:
+$
+  (a - 1/n)^2 > 2\
+  = a^2 + 1/n^2 - (2a)/n
+$
+We can get rid of the $1/n^2$ term, purely because it still keeps the $> 2$ constraint on the actual inequality.
+
+$
+  = a^2 + 1/n^2 - (2a)/n > a^2 - (2a)/n
+$
+
+Now, we just need to set $1/n_0 = (2 a)/n$:
+$
+  (2 a)/n_0 < a^2 - 2\
+  1/n_0 < (a^2 - 2)/(2 a)\
+  n_0 > (2 a)/(a^2 - 2)\
+$
+
+Given the constraints $a^2 > 2$, $a^2 - 2 > 0$ will hold unconditionally as a positive value. Secondly $a > 0$ so $2 a> 0$ follows naturally. Because $(2 a)/(a^2 - 2)$ is a positive real number $> 0$, we can always use the archimedean property to find $n > (2 a)/(a^2 - 2), n in NN$.
+
+This proves that we can find a $n_0$ such that $(a - 1/n_0) > 2$, which means
+$a - 1/n_0$ is an upper bound on $T = {t in RR: t^2 < 2}$, by it's definition.
+
+Therefore, $a != sup T$ for $a^2 > 2$.
+
+The theorem 1.4.5 proved that $a^2 < 2$ is invalid for the supremum condition to hold, and this solution proves the $a^2 > 2$ is invalid too. By the trichotomy of equality, $a^2 = 2$ must be true.
+
+
+
+
+
+

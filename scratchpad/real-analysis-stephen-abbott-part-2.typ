@@ -844,6 +844,8 @@ The theorem 1.4.5 proved that $a^2 < 2$ is invalid for the supremum condition to
 
 
 
+(b) We can just as easily show that, slotting $b$ in the places of $2$, in above proofs. Given that $b >= 0$, the only potentially troubling case I can think of is when $b = 0$ and $b = 1$, because they are their own square roots. But it's just as easy to show via maybe a piecewise proof that since they are real numbers, and their own roots, their roots are also real numbers.
+
 
 
 
